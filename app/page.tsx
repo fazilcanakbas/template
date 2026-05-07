@@ -9,7 +9,6 @@ import StatsCTA from "./components/StatsCTA";
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen bg-white overflow-hidden">
-      {/* Hero Section */}
       <section className="relative w-full bg-[#F5F5EB] pt-20 pb-0 flex flex-col items-center">
         <div className="w-full max-w-[1400px] mx-auto px-10 flex flex-col items-center relative z-10">
           
