@@ -1,65 +1,164 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
+import VideoSection from "./components/VideoSection";
+import FeatureSlider from "./components/FeatureSlider";
+import SuccessStories from "./components/SuccessStories";
+import StatsCTA from "./components/StatsCTA";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="flex flex-col min-h-screen bg-white overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative w-full bg-[#F5F5EB] pt-20 pb-0 flex flex-col items-center">
+        <div className="w-full max-w-[1400px] mx-auto px-10 flex flex-col items-center relative z-10">
+          
+          {/* Animated Text */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center mb-6 relative z-20"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <h1 className="text-4xl md:text-[68px] font-semibold text-[#1a1a1a] tracking-tight max-w-4xl mx-auto leading-[1.05]">
+              The intelligent platform<br />for travel and spend
+            </h1>
+          </motion.div>
+
+          {/* Phone and Cards Container */}
+          <div className="relative w-full max-w-[1200px] h-[520px] flex justify-center">
+            
+            {/* CARDS */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, x: 0, y: 100 }}
+              animate={{ opacity: 1, scale: 1, x: -400, y: -420 }}
+              transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+              className="absolute bottom-0 z-10"
+            >
+              <img src="/solust.png" alt="Ana Torres" className="w-[200px] h-auto" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, x: 0, y: 100 }}
+              animate={{ opacity: 1, scale: 1, x: -240, y: -330 }}
+              transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
+              className="absolute bottom-0 z-20"
+            >
+              <img src="/solorta.png" alt="Expense submitted tag" className="w-[120px] h-auto" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, x: 0, y: 100 }}
+              animate={{ opacity: 1, scale: 1, x: -340, y: -140 }}
+              transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
+              className="absolute bottom-0 z-10"
+            >
+              <img src="/solalt.png" alt="Flight ticket" className="w-[250px] h-auto" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, x: 0, y: 100 }}
+              animate={{ opacity: 1, scale: 1, x: 400, y: -300 }}
+              transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.45 }}
+              className="absolute bottom-0 z-10"
+            >
+              <img src="/sagust.png" alt="Set the budget" className="w-[240px] h-auto " />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, x: 0, y: 100 }}
+              animate={{ opacity: 1, scale: 1, x: 320, y: -120 }}
+              transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.55 }}
+              className="absolute bottom-0 z-20"
+            >
+              <img src="/sagalt.png" alt="Mark Adams" className="w-[200px] h-auto" />
+            </motion.div>
+
+            {/* PHONE */}
+            <motion.div
+              initial={{ opacity: 0, y: 200 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+              className="absolute bottom-0 z-30"
+            >
+              <img
+                src="/telefon.png"
+                alt="Phone app interface"
+                className="w-auto h-[520px] object-cover object-top"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 1 }}
+              className="absolute bottom-6 -right-30 z-40 hidden lg:block"
+            >
+              <img 
+                src="/heroalt.png" 
+                alt="Reviews and Stars" 
+                className="w-[320px] h-auto"
+              />
+            </motion.div>
+
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Trusted By Section */}
+      <section className="bg-[#D2D2C8] py-1 w-full border-t border-black/5 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto flex items-center px-10">
+          <div className="flex-none pr-10 z-10 bg-[#D2D2C8]">
+            <p className="text-[#1a1a1a] font-normal whitespace-nowrap text-lg">
+              Trusted by 1,000s of global teams
+            </p>
+          </div>
+
+          <div className="flex-1 relative overflow-hidden ml-4">
+            <div className="absolute left-0 top-0 bottom-0 w-5 bg-gradient-to-r from-[#D2D2C8] to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-[#D2D2C8] to-transparent z-10" />
+
+            <motion.div
+              className="flex w-max"
+              animate={{ x: [0, "-50%"] }}
+              transition={{
+                duration: 25,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              <div className="flex items-center gap-15 pr-15">
+                {[...Array(15)].map((_, i) => (
+                  <img
+                    key={`logo-${i}`}
+                    src={`/logo-${i + 1}.png`}
+                    alt={`Partner Logo ${i + 1}`}
+                    className="h-[58px] scale-1.1 w-auto opacity-100 grayscale hover:grayscale-0 transition-all duration-300 pointer-events-none"
+                  />
+                ))}
+              </div>
+              <div className="flex items-center gap-15 pr-15">
+                {[...Array(15)].map((_, i) => (
+                  <img
+                    key={`logo-dup-${i}`}
+                    src={`/logo-${i + 1}.png`}
+                    alt={`Partner Logo ${i + 1}`}
+                    className="h-[58px] scale-1.1 w-auto opacity-100 grayscale hover:grayscale-0 transition-all duration-300 pointer-events-none"
+                  />
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <VideoSection />
+      
+      <FeatureSlider />
+
+      <SuccessStories />
+
+      <StatsCTA />
+    </main>
   );
 }
